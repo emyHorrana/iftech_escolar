@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head><script src="../../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -95,10 +95,8 @@
         display: block !important;
       }
     </style>
-
-    
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="../../home.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -151,20 +149,18 @@
         </li>
       </ul>
     </div>
-
-    
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">Cover</h3>
+      <h3 class="float-md-start mb-0">IF TECH</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-        <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="../pessoas/index.php">Pessoas</a>
+        <a class="nav-link fw-bold py-1 px-0" href="../cursos/index.php">Cursos</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="#">Turmas</a>
+        <a class="nav-link fw-bold py-1 px-0" href="../financeiro/index.php">Financeiro</a>
       </nav>
     </div>
   </header>
-
   <main class="px-3">
     <h1>Cover your page.</h1>
     <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
@@ -172,12 +168,10 @@
       <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
     </p>
   </main>
-
   <footer class="mt-auto text-white-50">
     <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
   </footer>
 </div>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

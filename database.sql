@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `alunos`;
 CREATE TABLE IF NOT EXISTS `alunos` (
-  `id_aluno` int NOT NULL,
+  `id_aluno` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(256) NOT NULL,
   `cpf` varchar(12) NOT NULL,
   `data_nasc` date NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `alunos` (
 
 DROP TABLE IF EXISTS `campus`;
 CREATE TABLE IF NOT EXISTS `campus` (
-  `id_campus` int NOT NULL,
+  `id_campus` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(256) NOT NULL,
   `abreviacao` varchar(256) DEFAULT NULL COMMENT 'Grupo pessoas - Explicar essa coluna.',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.\r\n',
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `campus` (
 
 DROP TABLE IF EXISTS `colaboradores`;
 CREATE TABLE IF NOT EXISTS `colaboradores` (
-  `id_colaborador` int NOT NULL,
+  `id_colaborador` int NOT NULL AUTO_INCREMENT,
   `departamento` int DEFAULT NULL COMMENT '0 - Secretaria;\r\n1 - Tesouraria.',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `colaboradores` (
 
 DROP TABLE IF EXISTS `cursos`;
 CREATE TABLE IF NOT EXISTS `cursos` (
-  `id_curso` int NOT NULL,
+  `id_curso` int NOT NULL AUTO_INCREMENT,
   `id_campus` int DEFAULT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `descricao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Exemplo: Informática',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1- Ativo.',
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
 
 DROP TABLE IF EXISTS `disciplinas`;
 CREATE TABLE IF NOT EXISTS `disciplinas` (
-  `id_desciplina` int NOT NULL,
+  `id_desciplina` int NOT NULL AUTO_INCREMENT,
   `id_mat_curricular` int DEFAULT NULL,
   `nome` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `created` datetime DEFAULT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `disciplinas` (
 
 DROP TABLE IF EXISTS `financeiro_alunos`;
 CREATE TABLE IF NOT EXISTS `financeiro_alunos` (
-  `id_fin_alunos` int NOT NULL,
+  `id_fin_alunos` int NOT NULL AUTO_INCREMENT,
   `id_matricula` int NOT NULL,
   `id_pc` int NOT NULL,
   `valor` double NOT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `financeiro_alunos` (
 
 DROP TABLE IF EXISTS `financeiro_escolar`;
 CREATE TABLE IF NOT EXISTS `financeiro_escolar` (
-  `id_fin_escolar` int NOT NULL,
+  `id_fin_escolar` int NOT NULL AUTO_INCREMENT,
   `id_pc` int NOT NULL,
   `valor` double NOT NULL,
   `data_venc` datetime NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `financeiro_escolar` (
 
 DROP TABLE IF EXISTS `matriculas`;
 CREATE TABLE IF NOT EXISTS `matriculas` (
-  `id_matricula` int NOT NULL,
+  `id_matricula` int NOT NULL AUTO_INCREMENT,
   `id_aluno` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_turma` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.',
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
 
 DROP TABLE IF EXISTS `matrizes_curriculares`;
 CREATE TABLE IF NOT EXISTS `matrizes_curriculares` (
-  `id_mat_curricular` int NOT NULL,
+  `id_mat_curricular` int NOT NULL AUTO_INCREMENT,
   `ppc` varchar(256) NOT NULL COMMENT 'Grupo cursos: Explicar este campo.',
   `ano` date NOT NULL,
   `id_curso` int DEFAULT NULL,
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `matrizes_curriculares` (
 
 DROP TABLE IF EXISTS `plano_contas`;
 CREATE TABLE IF NOT EXISTS `plano_contas` (
-  `id_pc` int NOT NULL,
+  `id_pc` int NOT NULL AUTO_INCREMENT,
   `descricao` varchar(256) NOT NULL,
   `tipo_pc` int NOT NULL COMMENT '0 - crédito\r\n1- Débito',
   `status` int NOT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.',
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `plano_contas` (
 
 DROP TABLE IF EXISTS `professores`;
 CREATE TABLE IF NOT EXISTS `professores` (
-  `id_professor` int NOT NULL,
+  `id_professor` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(256) NOT NULL,
   `cpf` varchar(15) NOT NULL,
   `data_nasc` date NOT NULL,
@@ -232,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `professores` (
 
 DROP TABLE IF EXISTS `turmas`;
 CREATE TABLE IF NOT EXISTS `turmas` (
-  `id_turmas` int NOT NULL,
+  `id_turmas` int NOT NULL AUTO_INCREMENT,
   `id_curso` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_disciplina` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_professor` int NOT NULL COMMENT 'Professor coordenador',
