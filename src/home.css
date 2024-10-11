@@ -1,7 +1,9 @@
 /*
  * Globals
  */
-
+:root {
+  --main-color: #369930;
+}
 
 /* Custom default button */
 .btn-light,
@@ -29,7 +31,10 @@ body {
 /*
  * Header
  */
-
+h3:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
 .nav-masthead .nav-link {
   color: rgba(255, 255, 255, .5);
   border-bottom: .25rem solid transparent;
@@ -37,7 +42,8 @@ body {
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: var(--main-color);
+  color: var(--main-color);
 }
 
 .nav-masthead .nav-link + .nav-link {
