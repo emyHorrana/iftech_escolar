@@ -152,7 +152,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">IF TECH</h3>
+      <h3 class="float-md-start mb-0"><a class="nav-link" href="../../index.php">IF TECH</a></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="../pessoas/index.php">Pessoas</a>
         <a class="nav-link fw-bold py-1 px-0 active" href="#">Cursos</a>
@@ -169,7 +169,9 @@
     </p>
   </main>
   <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    <?php
+      include_once("../../components/footer.php");
+    ?>
   </footer>
 </div>
 <script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
