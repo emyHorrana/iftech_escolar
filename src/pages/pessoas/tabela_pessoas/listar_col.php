@@ -1,5 +1,5 @@
 <?php
-      include_once("../../components/topo.php");
+      include_once("../../../components/topo.php");
 ?> 
   <body class="d-flex h-100 text-center text-bg-dark">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -81,7 +81,7 @@
   </main>
   <footer class="mt-auto text-white-50">
     <?php
-      include_once("../../components/footer.php");
+      include_once("../../../components/footer.php");
     ?>
   </footer>
 </div>
