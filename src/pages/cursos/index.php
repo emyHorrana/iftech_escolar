@@ -55,7 +55,7 @@
       </ul>
     </div>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
+  <header class="mb-5">
     <div>
       <h3 class="float-md-start mb-0"><a class="nav-link" href="../../index.php">IF TECH</a></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
@@ -66,12 +66,13 @@
       </nav>
     </div>
   </header>
-  <main class="px-3">
-    <h1>Cursos</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-    </p>
+  <main class="d-flex justify-content-start">
+    <div>
+       <h2>Cursos
+         <a class="btn btn-primary" href="../cadastrar.php">Cadastrar Pessoas</a>
+       </h2>
+     </div>
+
   </main>
   <footer class="mt-auto text-white-50">
     <?php
