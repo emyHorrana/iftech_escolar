@@ -73,30 +73,33 @@ include_once("../../components/topo.php");
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
-        <h3 class="float-md-start mb-0"><a class="nav-link" href="../../index.php">IF TECH</a></h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Pessoas</a>
-          <a class="nav-link fw-bold py-1 px-0" href="../cursos/index.php">Cursos</a>
-          <a class="nav-link fw-bold py-1 px-0" href="../turmas/index.php">Turmas</a>
-          <a class="nav-link fw-bold py-1 px-0" href="../financeiro/index.php">Financeiro</a>
-        </nav>
+        <h3 class="float-md-start mb-0"><a class="nav-link" >IF TECH</a></h3>
       </div>
-      <div>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link fw-bold py-1 px-0 " href="listagem_pessoas/listar_alunos.php">Alunos</a>
-          <a class="nav-link fw-bold py-1 px-0" href="listagem_pessoas/listar_professores.php">Professores</a>
-          <a class="nav-link fw-bold py-1 px-0" href="login_pessoas.php">Login teste</a>
-        </nav>
-      </div>
-
     </header>
     <main class="px-3">
-      <h1>Cover your page.</h1>
-      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the
-        text, and add your own fullscreen background photo to make it your own.</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-      </p>
+      <form action='processa/proc_login.php' method="POST">
+
+        <br>
+        <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" placeholder="CPF" name="usuario">
+          <label for="floatingInput">CPF</label>
+        </div>
+        <br>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="senha">
+          <label for="floatingPassword">Senha</label>
+        </div>
+
+        <div class="form-check text-start my-3">
+          <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Lembrar-me
+          </label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit" name="acao">Acessar</button>
+      </form>
     </main>
     <footer class="mt-auto text-white-50">
       <?php
