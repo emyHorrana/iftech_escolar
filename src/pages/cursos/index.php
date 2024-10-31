@@ -69,7 +69,7 @@
   <main class="d-flex justify-content-start">
     <div>
        <h2>Cursos
-         <a class="btn btn-primary" href="../cadastrar.php">Cadastrar Pessoas</a>
+         <a class="btn btn-primary" href="./cadastrar.php">Cadastrar Pessoas</a>
        </h2>
      </div>
 
