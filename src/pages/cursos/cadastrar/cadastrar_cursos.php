@@ -11,7 +11,7 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">Cadastro de Cursos</h1>
-        <form action="processa_cadastro_cursos.php" method="post">
+        <form action="../processa/processa_cadastro_cursos.php" method="post">
             
             <!-- Campo de Descrição -->
             <div class="form-floating mb-3">
