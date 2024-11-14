@@ -36,11 +36,6 @@
                 </select>
                 <label for="modalidade">Modalidade</label>
             </div>
-
-            <!-- Campos ocultos -->
-            <input type="hidden" id="created" name="created">
-            <input type="hidden" id="modified" name="modified">
-
             <!-- Botão de envio -->
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 09-Out-2024 às 11:25
+-- Tempo de geração: 14-Nov-2024 às 11:25
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `alunos`;
 CREATE TABLE IF NOT EXISTS `alunos` (
-  `id_aluno` int NOT NULL AUTO_INCREMENT,
+  `id_aluno` int NOT NULL,
   `nome` varchar(256) NOT NULL,
   `cpf` varchar(12) NOT NULL,
   `data_nasc` date NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `alunos` (
 
 DROP TABLE IF EXISTS `campus`;
 CREATE TABLE IF NOT EXISTS `campus` (
-  `id_campus` int NOT NULL AUTO_INCREMENT,
+  `id_campus` int NOT NULL,
   `nome` varchar(256) NOT NULL,
   `abreviacao` varchar(256) DEFAULT NULL COMMENT 'Grupo pessoas - Explicar essa coluna.',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.\r\n',
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `campus` (
 
 DROP TABLE IF EXISTS `colaboradores`;
 CREATE TABLE IF NOT EXISTS `colaboradores` (
-  `id_colaborador` int NOT NULL AUTO_INCREMENT,
+  `id_colaborador` int NOT NULL,
   `departamento` int DEFAULT NULL COMMENT '0 - Secretaria;\r\n1 - Tesouraria.',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -90,13 +90,21 @@ DROP TABLE IF EXISTS `cursos`;
 CREATE TABLE IF NOT EXISTS `cursos` (
   `id_curso` int NOT NULL AUTO_INCREMENT,
   `id_campus` int DEFAULT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
+  `nome` varchar(255) NOT NULL,
   `descricao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Exemplo: Informática',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1- Ativo.',
   `modalidade` int NOT NULL COMMENT '0 - Presencial;\r\n1 - EAD.',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id_curso`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `cursos`
+--
+
+INSERT INTO `cursos` (`id_curso`, `id_campus`, `nome`, `descricao`, `status`, `modalidade`, `created`, `modified`) VALUES
+(1, NULL, '', 'fddsf', 1, 1, '2024-11-14 08:11:05', '2024-11-14 08:11:05');
 
 -- --------------------------------------------------------
 
@@ -122,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `disciplinas` (
 
 DROP TABLE IF EXISTS `financeiro_alunos`;
 CREATE TABLE IF NOT EXISTS `financeiro_alunos` (
-  `id_fin_alunos` int NOT NULL AUTO_INCREMENT,
+  `id_fin_alunos` int NOT NULL,
   `id_matricula` int NOT NULL,
   `id_pc` int NOT NULL,
   `valor` double NOT NULL,
@@ -142,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `financeiro_alunos` (
 
 DROP TABLE IF EXISTS `financeiro_escolar`;
 CREATE TABLE IF NOT EXISTS `financeiro_escolar` (
-  `id_fin_escolar` int NOT NULL AUTO_INCREMENT,
+  `id_fin_escolar` int NOT NULL,
   `id_pc` int NOT NULL,
   `valor` double NOT NULL,
   `data_venc` datetime NOT NULL,
@@ -160,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `financeiro_escolar` (
 
 DROP TABLE IF EXISTS `matriculas`;
 CREATE TABLE IF NOT EXISTS `matriculas` (
-  `id_matricula` int NOT NULL AUTO_INCREMENT,
+  `id_matricula` int NOT NULL,
   `id_aluno` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_turma` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `status` int DEFAULT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.',
@@ -194,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `matrizes_curriculares` (
 
 DROP TABLE IF EXISTS `plano_contas`;
 CREATE TABLE IF NOT EXISTS `plano_contas` (
-  `id_pc` int NOT NULL AUTO_INCREMENT,
+  `id_pc` int NOT NULL,
   `descricao` varchar(256) NOT NULL,
   `tipo_pc` int NOT NULL COMMENT '0 - crédito\r\n1- Débito',
   `status` int NOT NULL COMMENT '0 - Inativo;\r\n1 - Ativo.',
@@ -211,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `plano_contas` (
 
 DROP TABLE IF EXISTS `professores`;
 CREATE TABLE IF NOT EXISTS `professores` (
-  `id_professor` int NOT NULL AUTO_INCREMENT,
+  `id_professor` int NOT NULL,
   `nome` varchar(256) NOT NULL,
   `cpf` varchar(15) NOT NULL,
   `data_nasc` date NOT NULL,
@@ -232,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `professores` (
 
 DROP TABLE IF EXISTS `turmas`;
 CREATE TABLE IF NOT EXISTS `turmas` (
-  `id_turmas` int NOT NULL AUTO_INCREMENT,
+  `id_turmas` int NOT NULL,
   `id_curso` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_disciplina` int NOT NULL COMMENT 'Todos os grupos: Conferir chave estrangeira!',
   `id_professor` int NOT NULL COMMENT 'Professor coordenador',

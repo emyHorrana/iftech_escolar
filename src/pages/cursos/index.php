@@ -82,13 +82,13 @@ $comando->execute();
           if ($cursos) {
             ?>
             <tr>
-              <td><?php echo $cursos['id']; ?></td>
+              <td><?php echo $cursos['id_curso']; ?></td>
               <td><?php echo $cursos['descricao']; ?></td>
               <td>
-                <a class="btn btn-primary" href="editar_pessoas.php?id=<?php echo $cursos["id"]; ?>">Editar</a>
+                <a class="btn btn-success" href="editar/editar_cursos.php?id=<?php echo $cursos["id_curso"]; ?>">Editar</a>
               </td>
               <td>
-                <a class="btn btn-danger" href="excluir_pessoas.php?id=<?php echo $cursos["id"]; ?>">Excluir</a>
+                <a class="btn btn-danger" href="excluir/excluir_cursos.php?id=<?php echo $cursos["id_curso"]; ?>">Excluir</a>
               </td>
             </tr>
 
