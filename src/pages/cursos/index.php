@@ -73,6 +73,8 @@ $comando->execute();
         <tr>
           <th>Id</th>
           <th>Nome</th>
+          <th>Descrição</th>
+
         </tr>
       </thead>
       <tbody>
@@ -83,7 +85,9 @@ $comando->execute();
             ?>
             <tr>
               <td><?php echo $cursos['id_curso']; ?></td>
+              <td><?php echo $cursos['nome']; ?></td>
               <td><?php echo $cursos['descricao']; ?></td>
+              
               <td>
                 <a class="btn btn-success" href="editar/editar_cursos.php?id=<?php echo $cursos["id_curso"]; ?>">Editar</a>
               </td>
