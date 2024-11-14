@@ -13,6 +13,12 @@
         <h1 class="mb-4">Cadastro de Cursos</h1>
         <form action="../processa/processa_cadastro_cursos.php" method="post">
             
+            <!-- Campo de Nome -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Exemplo: Curso de Informática" required>
+                <label for="nome">Nome</label>
+            </div>
+
             <!-- Campo de Descrição -->
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Exemplo: Informática" required>
@@ -36,6 +42,7 @@
                 </select>
                 <label for="modalidade">Modalidade</label>
             </div>
+
             <!-- Botão de envio -->
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
