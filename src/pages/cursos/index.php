@@ -68,7 +68,7 @@ $comando->execute();
       </h2>
     </div>
 
-    <table id="tabelaListar" border="1" width="100%">
+    <table class="table table-dark" id="tabelaListar" border="1" width="100%">
       <thead>
         <tr>
           <th>Id</th>
