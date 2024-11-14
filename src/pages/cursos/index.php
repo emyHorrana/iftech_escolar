@@ -47,7 +47,7 @@ $comando->execute();
         </li>
       </ul>
     </div>
-    <div class="cover-container d-flex w-100 h-100 p-3 px-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-5">
         <div>
           <h3 class="float-md-start mb-0"><a class="nav-link" href="../../index.php">IF TECH</a></h3>
