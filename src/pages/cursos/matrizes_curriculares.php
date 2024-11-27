@@ -1,6 +1,12 @@
 <?php
 include_once("../../components/topo.php");
 include_once("./components/menu.php");
+include_once("../../adm/conexao.php");
+
+$sql = "SELECT * from matrizes_curriculares";
+$comando = $pdo->prepare($sql);
+
+$comando->execute();
 ?>
 
 <body class="d-flex h-100 text-center text-bg-dark">
@@ -54,9 +60,45 @@ include_once("./components/menu.php");
     <main class="d-flex justify-content-start">
       <div>
         <h2>Matrizes Curriculares
-          <a class="btn btn-primary" href="./cadastrar/cadastrar_matrizes.php">Cadastrar Pessoas</a>
+        <a class="btn btn-primary" href="./cadastrar/cadastrar_matrizes.php">Cadastrar Pessoas</a>
         </h2>
       </div>
+      <table id="tabelaListar" border="1" width="100%">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            
+
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+          while ($cursos = $comando->fetch(PDO::FETCH_ASSOC)) {
+            if ($cursos) {
+              ?>
+              <tr>
+
+                <td><?php echo $cursos['id_mat_curricular']; ?></td>
+                <td><?php echo $cursos['ppc']; ?></td>
+
+
+                <td>
+                <a class="btn btn-success"
+                    href="editar/editar_matrizes.php?id=<?php echo $cursos["id_mat_curricular"]; ?>">Editar</a>
+                </td>
+                <td>
+                  <a class="btn btn-danger"
+                    href="excluir/excluir_matrizes.php?id=<?php echo $cursos["id_mat_curricular"]; ?>">Excluir</a>
+                </td>
+              </tr>
+
+            <?php }
+          }
+          ?>
+        </tbody>
+      </table>
     </main>
     <footer class="mt-auto text-white-50">
       <?php
