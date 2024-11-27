@@ -6,31 +6,17 @@ require_once('../../../adm/conexao.php');
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];  // Sanitizando o ID
 
-    // Verificar se a conexão foi estabelecida corretamente
-    if ($conn->connect_error) {
-        die("Erro de conexão: " . $conn->connect_error);
-    }
-
     // Consultar o curso no banco de dados
     $sql = "SELECT * FROM cursos WHERE id = $id";  // Consulta simples
+    $pdo->prepare($sql);
 
-    $result = $conn->query($sql);
-
-    // Verificar se a consulta retornou resultados
-    if ($result->num_rows > 0) {
-        // Recuperar os dados do curso
-        $curso = $result->fetch_assoc();
-    } else {
-        // Caso o curso não seja encontrado
-        echo "Curso não encontrado.";
-        exit;
-    }
 
 } else {
     // Caso o ID não tenha sido fornecido via GET
     echo "ID do curso não fornecido.";
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,11 +36,11 @@ if (isset($_GET['id'])) {
         <form action="../processa/processa_cadastro_cursos.php" method="post">
 
             <!-- Campo oculto para ID -->
-            <input type="hidden" name="id" value="<?php echo htmlspecialchars($curso['id']); ?>">
+            <input type="hidden" name="id" value="<?php echo $curso['id']; ?>">
 
             <!-- Campo Descrição -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($curso['descricao']); ?>" required>
+                <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo $curso['descricao']; ?>" required>
                 <label for="descricao">Descrição</label>
             </div>
 
@@ -77,7 +63,7 @@ if (isset($_GET['id'])) {
             </div>
 
             <!-- Campo oculto para data de criação (não editável) -->
-            <input type="hidden" id="created" name="created" value="<?php echo htmlspecialchars($curso['created']); ?>">
+            <input type="hidden" id="created" name="created" value="<?php echo$curso['created']; ?>">
 
             <!-- Campo oculto para data de modificação (atualizada no momento da edição) -->
             <input type="hidden" id="modified" name="modified" value="<?php echo date('Y-m-d H:i:s'); ?>">

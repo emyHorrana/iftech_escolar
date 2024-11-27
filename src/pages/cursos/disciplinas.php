@@ -84,10 +84,10 @@ $comando->execute();
              
 
                 <td>
-                  <a class="btn btn-success" href="editar/editar_disciplinas.php?id=<?php echo $cursos["id_disciplina"]; ?>">Editar</a>
+                  <a class="btn btn-success" href="editar/editar_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Editar</a>
                 </td>
                 <td>
-                  <a class="btn btn-danger" href="excluir/excluir_disciplinas.php?id=<?php echo $cursos["id_disciplina"]; ?>">Excluir</a>
+                  <a class="btn btn-danger" href="excluir/excluir_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Excluir</a>
                 </td>
               </tr>
 
