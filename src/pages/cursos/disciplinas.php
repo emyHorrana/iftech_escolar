@@ -1,8 +1,14 @@
 <?php
 include_once("../../components/topo.php");
 include_once("./components/menu.php");
-?>
+include_once("../../adm/conexao.php");
 
+$sql = "SELECT * from disciplinas";
+$comando = $pdo->prepare($sql);
+
+$comando->execute();
+
+?>
 <body class="d-flex h-100 text-center text-bg-dark">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -57,6 +63,39 @@ include_once("./components/menu.php");
           <a class="btn btn-primary" href="./cadastrar/cadastrar_disciplinas.php">Cadastrar Pessoas</a>
         </h2>
       </div>
+      <table id="tabelaListar" border="1" width="100%">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+          while ($cursos = $comando->fetch(PDO::FETCH_ASSOC)) {
+            if ($cursos) {
+          ?>
+              <tr>
+               
+                <td><?php echo $cursos['nome']; ?></td>
+             
+
+                <td>
+                  <a class="btn btn-success" href="editar/editar_disciplinas.php?id=<?php echo $cursos["id_disciplina"]; ?>">Editar</a>
+                </td>
+                <td>
+                  <a class="btn btn-danger" href="excluir/excluir_disciplinas.php?id=<?php echo $cursos["id_disciplina"]; ?>">Excluir</a>
+                </td>
+              </tr>
+
+          <?php }
+          }
+          ?>
+        </tbody>
+      </table>
     </main>
     <footer class="mt-auto text-white-50">
       <?php
