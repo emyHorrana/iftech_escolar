@@ -74,6 +74,7 @@ $comando->execute();
           <th>Id</th>
           <th>Nome</th>
           <th>Descrição</th>
+            <th> </th>
 
         </tr>
       </thead>
