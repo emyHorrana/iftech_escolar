@@ -61,7 +61,7 @@ $comando->execute();
       </header>
     </div>
   </div>
-  <main class="d-flex mx-auto flex-column">
+  <main class="d-flex mx-5 flex-column">
     <div>
       <h2>Cursos
         <a class="btn btn-primary" href="./cadastrar/cadastrar_cursos.php">Cadastrar Pessoas</a>

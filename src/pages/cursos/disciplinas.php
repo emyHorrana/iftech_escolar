@@ -9,6 +9,7 @@ $comando = $pdo->prepare($sql);
 $comando->execute();
 
 ?>
+
 <body class="d-flex h-100 text-center text-bg-dark">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -57,7 +58,7 @@ $comando->execute();
         </nav>
       </div>
     </header>
-    <main class="d-flex justify-content-start">
+    <main class="d-flex justify-content-start flex-column">
       <div>
         <h2>Disciplinas
           <a class="btn btn-primary" href="./cadastrar/cadastrar_disciplinas.php">Cadastrar Pessoas</a>
@@ -77,21 +78,24 @@ $comando->execute();
 
           while ($cursos = $comando->fetch(PDO::FETCH_ASSOC)) {
             if ($cursos) {
-          ?>
+              ?>
               <tr>
-               
+
+                <td><?php echo $cursos['id_desciplina']; ?></td>
                 <td><?php echo $cursos['nome']; ?></td>
-             
+
 
                 <td>
-                  <a class="btn btn-success" href="editar/editar_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Editar</a>
+                  <a class="btn btn-success"
+                    href="editar/editar_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Editar</a>
                 </td>
                 <td>
-                  <a class="btn btn-danger" href="excluir/excluir_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Excluir</a>
+                  <a class="btn btn-danger"
+                    href="excluir/excluir_disciplinas.php?id=<?php echo $cursos["id_desciplina"]; ?>">Excluir</a>
                 </td>
               </tr>
 
-          <?php }
+            <?php }
           }
           ?>
         </tbody>

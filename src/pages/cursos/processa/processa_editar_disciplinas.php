@@ -7,8 +7,6 @@
    
     $nome= $_POST['nome'];
 
-    var_dump($nome);
-
 
     //criptografia
   
