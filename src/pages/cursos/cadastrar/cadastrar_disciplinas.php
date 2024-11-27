@@ -11,7 +11,7 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">Cadastro Disciplinas</h1>
-        <form action="../processa/processa_cadastro_disciplinas.php " method="post">
+        <form action="../processa/processa_cadastro_disciplinas.php" method="post">
             
             <!-- Campo de Nome -->
             <div class="form-floating mb-3">
@@ -23,7 +23,7 @@
 
             <!-- Botão de envio -->
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-            <button hrelf = "cadastrar_disciplinas.php" class="btn btn-danger">Cancelar</button>
+            <button hrelf = "../disciplinas.php" class="btn btn-danger">Cancelar</button>
         </form>
     </div>
 
